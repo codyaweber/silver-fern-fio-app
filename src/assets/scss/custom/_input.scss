@@ -1,0 +1,16 @@
+input[type=text] {
+  background-color: $neutral;
+  color: white;
+  outline: none;
+  border: 1px solid white;
+  border-radius: $corner-radius;
+  transition: 0.2s;
+  padding: 0px 8px;
+  box-sizing: border-box;
+  caret-color: $light-green;
+  
+  &:focus {
+    border: 1px solid $light-green;
+    transition: 0.2s;
+  }
+}

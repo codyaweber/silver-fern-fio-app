@@ -1,0 +1,49 @@
+.segmented-control-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+.segmented-control {
+  display: flex;
+  border-radius: $corner-radius;
+  justify-content: space-between;
+  align-items: flex-start;
+  border: 1px solid $primary-background;
+  
+  border-radius: $corner-radius;
+  background-size: 300% 300%;
+  -webkit-animation: gradient 8s ease infinite;
+          animation: gradient 8s ease infinite;
+          
+  -webkit-animation-direction: reverse;
+          
+          animation-direction: reverse;
+}
+
+
+.segmented-tab {
+  cursor: pointer;
+  white-space: nowrap;
+  transition: 0.2s;
+  background-color: $neutral;
+  border-radius: $corner-radius;
+  padding : {
+    top: 4px;
+    bottom: 4px;
+    left: 24px;
+    right: 24px;
+  }
+  
+  &:not(:first-child) {
+    border-left: 1px solid $neutral;
+  }
+  
+  &.active {
+    transition: 0.2s;
+    opacity: 1;
+    border-radius: $corner-radius;
+    background-color: white;
+    color: $neutral;
+  }
+}

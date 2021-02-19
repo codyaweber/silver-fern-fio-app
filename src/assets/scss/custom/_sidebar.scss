@@ -1,0 +1,178 @@
+.sidebar {
+  display: block;
+  float: left;
+  height: 100%;
+  width: $sidebar-width;
+  background-color: $secondary-background;
+  transition: 0.5s ease;
+  padding: $sidebar-padding;
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+
+.brand {
+  position: fixed;
+  z-index: 3;
+  font-size: 20px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  display: inline-block;
+  margin-left: 2px;
+}
+
+.brand-title {
+  font-size: 24px;
+  padding-left: 18px;
+  opacity: 1;
+  transition: opacity 0.5s ease 0.1s;
+  white-space: nowrap;
+}
+
+.sidebar-nav {
+  position: -webkit-sticky;
+  position: sticky;
+  margin: -8px;
+  padding: 0;
+  margin-top: $sidebar-icon-dim + $sidebar-padding;
+}
+
+.nav-item {
+  cursor: pointer;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  font-weight: 400;
+  overflow-x: hidden;
+  color: white;
+  
+  &.active {
+    background: linear-gradient(-75deg, #ee7752cc, #e73c7ecc, #23a6d5cc, #23d5abcc);
+    background-size: 300% 300%;
+    -webkit-animation: gradient 8s ease infinite;
+            animation: gradient 8s ease infinite;
+            
+    -webkit-animation-direction: reverse;
+            
+            animation-direction: reverse;
+  }
+  
+  &.active .nav-icon {
+    background: linear-gradient(105deg, #ee7752cc, #e73c7ecc, #23a6d5cc, #23d5abcc);
+    background-size: 400% 400%;
+    -webkit-animation: gradient 8s ease infinite;
+            animation: gradient 8s ease infinite;
+            
+    -webkit-animation-direction: reverse;
+            
+            animation-direction: reverse;
+  }
+  
+  @-webkit-keyframes gradient {
+  	0% {
+  		background-position: 0% 50%;
+  	}
+  	50% {
+  		background-position: 100% 50%;
+  	}
+  	100% {
+  		background-position: 0% 50%;
+  	}
+  }
+  
+  @keyframes gradient {
+  	0% {
+  		background-position: 0% 50%;
+  	}
+  	50% {
+  		background-position: 100% 50%;
+  	}
+  	100% {
+  		background-position: 0% 50%;
+  	}
+  }
+  
+  border: {
+    top: 1px $neutral solid;
+  }
+  
+  &:last-child {
+    border-bottom: 1px $neutral solid;
+  }
+  
+  &:hover {
+    background-color: $primary-background;
+    transition: 0.4s ease;
+  }
+}
+
+.nav-icon {
+  display: flex;
+  // Force size to remain constant
+  flex-shrink: 0;
+  flex-grow: 0;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: $neutral;
+}
+
+.nav-title {
+  padding: {
+    left: 10px;
+  }
+  
+  -webkit-user-select: none;  
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  
+  // transition: position 0.5s ease 1sgo;
+  transition: opacity 0.5s ease 0.1s;
+  white-space: nowrap;
+}
+
+@media screen and (max-width: 991px) {
+  .sidebar {
+    width: $sidebar-width-collapsed;
+    transition: 0.5s ease;
+  }
+  
+  .brand-title {
+    opacity: 0;
+    transition: 0.5s ease;
+  }
+  
+  .nav-title {
+    opacity: 0;
+    transition: 0.5s ease;
+  }
+  
+  .nav-open {  
+    .sidebar {
+      width: $sidebar-width;
+      padding: $sidebar-padding;
+      transition: 0.5s ease;
+    }
+    
+    .brand-title {
+      opacity: 1;
+      transition: opacity 0.5s ease 0.1s;
+      overflow-x: hidden;
+    }
+    
+    .nav-title {
+      opacity: 1;
+      transition: opacity 0.5s ease 0.1s;
+    }
+  }
+}

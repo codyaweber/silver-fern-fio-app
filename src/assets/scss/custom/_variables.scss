@@ -1,0 +1,41 @@
+
+// Colors
+
+$primary-background :     #0B132B; // Oxford Blue
+$secondary-background :   #1C2541; // Space Cadet
+$background :             #34495e; // Totally background
+$neutral :                #3A506B; // Independence
+$pop :                    #5BC0BE; // Maximum Blue Green
+$light-gray :             #999;
+$contrast :               #FFFFFF; // White
+$transparent :            transparent;
+$disabled :               #333;
+$mild-text :              #BBB;
+
+$light-red :              #F77;
+$light-green :            #4A4;
+
+$orange :                 #FB8C00;
+
+
+$primary-text  : white;
+$contrast-text : black;
+
+$corner-radius:   1000px;
+
+$section-padding: 24px;
+
+$card-padding:    12px;
+$card-margin:     12px;
+
+$navbar-height : 56px;
+
+$sidebar-width : 240px;
+$sidebar-padding: $card-padding;
+$sidebar-width-collapsed : $navbar-height;
+$sidebar-icon-dim : $navbar-height - 2*$sidebar-padding;
+
+$topbar-x:             topbar-x;
+$topbar-back:          topbar-back;
+$bottombar-x:          bottombar-x;
+$bottombar-back:       bottombar-back;

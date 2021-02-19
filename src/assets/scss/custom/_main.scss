@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@900&display=swap');
+
+#root {
+  height: 100%;
+}
+
+a {
+  text-decoration: none !important;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  color: $primary-text;
+  background-color: $background;
+  font-family: Rubik, sans-serif;
+  height: 100%;
+}
+
+.main {
+  width: 100%;
+  min-height: 100vh;
+  transition: 0.5s ease;
+  overflow: hidden;
+}
+
+.container-wrapper {
+  display: flex;
+  position: relative;
+  height: 100%;
+}
+
+.section-wrapper {
+  padding: $section-padding;
+  position: relative;
+  overflow-y: scroll;
+}
+
+button {
+  cursor: pointer;
+  background-color: $secondary-background;
+  color: white;
+  border: none;
+  border-radius: $corner-radius;
+  transition: 0.2s;
+  
+  &:hover {
+    background-color: $primary-background;
+    transition: 0.2s;
+  }
+  
+  &:focus {
+    outline: none;
+  }
+}
+
+[class*='col-'] {
+  transition: all 0.4s ease;
+  will-change: transform;
+}
+
+.blurred {
+  background-color: #000000AA;
+  -webkit-backdrop-filter: blur(4px);
+          backdrop-filter: blur(4px);
+}
+
+.row-list {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  
+  &.right {
+    flex-direction: row-reverse;
+    justify-content: flex-start;
+    
+    & > * {
+      margin: 0 8px;
+      
+      &:first-child {
+        margin-right: 0px;
+      }
+    }
+  }
+}
+
+.text-orange {
+  color: $orange;
+}
+
+.shop-cart {
+  max-height: 320px;
+  overflow-y: scroll;
+}

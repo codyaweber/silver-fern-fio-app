@@ -1,0 +1,146 @@
+.navbar {
+  width: 100%;
+  background-color: $secondary-background;
+  display: block;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: $navbar-height;
+  
+  button {
+    background: transparent;
+    outline: 0px;
+    border-width: 0px;
+    
+    &:hover {
+      background-color: transparent;
+    }
+  }
+}
+
+.navbar{
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 4;
+}
+
+@media(min-width: 992px) {
+  .navbar {
+    justify-content: flex-end;
+  }
+}
+
+.navbar-item {
+  display: flex;
+  cursor: pointer;
+}
+
+.burger {
+  flex-direction: column;
+  background-color: $transparent;
+  
+  border-width: 0;
+  &:focus {
+    outline: none;
+  }
+}
+
+.burger-bar {
+  padding: 0;
+  margin: 0;
+  width: 24px;
+  height: 1px;
+  margin-top: 6px;
+  border-top: 1px $white solid;
+  z-index: -1;
+  
+  &:last-child {
+    margin-bottom: 8px;
+  }
+}
+
+.avatar-dropdown {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-self: flex-start;
+  align-items: center;
+}
+
+.avatar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-radius: 50%;
+  height: $navbar-height - 18;
+}
+
+.avatar span {
+  margin-left: 8px;
+  color: $white;
+}
+
+@include topbar-x-rotation();
+@include topbar-back-rotation();
+@include bottombar-x-rotation();
+@include bottombar-back-rotation();
+
+.bar1 {
+  position: relative;
+  @include bar-animation($topbar-back);
+}
+
+.bar2 {
+  opacity: 1;
+}
+
+.bar3 {
+  position: relative;
+  @include bar-animation($bottombar-back);
+}
+
+.toggled .bar1 {
+  top: 7px; 
+  @include bar-animation($topbar-x);
+}
+
+.toggled .bar2 {
+  opacity: 0;
+}
+
+.toggled .bar3 {
+  bottom: 7px;
+  @include bar-animation($bottombar-x);
+}
+
+@media screen and (max-width: 991px) {
+  
+  .content {
+    margin-left: 20px;
+    transition: 0.5s ease;
+    overflow-y: scroll;
+  }
+  
+  // .nav-open .main {
+  //   /* left: 220px; */
+  //   transform: translateX(220px);
+  //   transition: 0.5s ease;
+  // }
+  // 
+  // .nav-open .content {
+  //   transition: 0.5s ease;
+  // }
+}
+
+/* [class^='col-xl'] p,
+[class^='col-lg'] p,
+[class^='col-md'] p,
+[class^='col-sm'] p,
+[class^='col'] p {
+  text-align: center;
+} */
